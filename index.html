@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Ambiental - El Salvador</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<header>
+    <h1>DASHBOARD AMBIENTAL</h1>
+    <p>Análisis climático de ciudades de El Salvador</p>
+</header>
+
+<div class="encabezado-universidad">
+    <h2>Universidad Cristiana de las Asambleas de Dios</h2>
+    <p><strong>Alumna:</strong> Nathaly Alexandra Contreras Arevalo</p>
+    <p><strong>Materia:</strong> Sistemas de Información Gerencial</p>
+    <p><strong>Catedrático:</strong> Andrés Alfaro</p>
+</div>
+
+<section class="contexto">
+    <h2>Descripción</h2>
+    <p>
+        Este dashboard presenta un análisis climático en tiempo real utilizando una API pública,
+        mostrando lluvia, temperatura y humedad en distintas ciudades de El Salvador.
+    </p>
+</section>
+
+<!-- GRÁFICOS -->
+<div class="graficos">
+
+    <div class="card">
+        <h3>Lluvia</h3>
+        <div class="chart-container">
+            <canvas id="graficoLluvia"></canvas>
+        </div>
+        <p class="descripcion">
+            Este gráfico muestra la cantidad de precipitación registrada en cada ciudad.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Temperatura</h3>
+        <div class="chart-container">
+            <canvas id="graficoTemp"></canvas>
+        </div>
+        <p class="descripcion">
+            Aquí se observa la variación de temperatura actual en las ciudades analizadas.
+        </p>
+    </div>
+
+</div>
+
+<div class="graficos-abajo">
+    <div class="card">
+        <h3>Humedad</h3>
+        <div class="chart-container">
+            <canvas id="graficoHumedad"></canvas>
+        </div>
+        
+    </div>
+</div>
+
+<!-- TABLA -->
+<div class="tabla-resumen">
+
+    <h2>Resumen Climático</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ciudad</th>
+                <th>Lluvia (mm)</th>
+                <th>Temperatura (°C)</th>
+                <th>Humedad (%)</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaDatos"></tbody>
+    </table>
+
+</div>
+
+<div class="botones">
+    <a href="generar_pdf.php" target="_blank">Exportar PDF</a>
+    <a href="exportar_excel.php">Exportar Excel</a>
+</div>
+
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

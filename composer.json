@@ -1,0 +1,16 @@
+{
+    "name": "nathaly/lab-4-sig",
+    "description": "app web de reporte de PDF y excel",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nathaly Contreras",
+            "email": "contreras.nathaly12@gmail.com"
+        }
+    ],
+    "require": {
+        "mpdf/mpdf": "^8.3",
+        "dompdf/dompdf": "^3.1",
+        "phpoffice/phpspreadsheet": "^1.12"
+    }
+}
