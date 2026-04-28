@@ -27,46 +27,59 @@
 <section class="contexto">
     <h2>Descripción</h2>
     <p>
-        Este dashboard presenta un análisis climático en tiempo real utilizando una API pública,
-        mostrando lluvia, temperatura y humedad en distintas ciudades de El Salvador.
+        Este dashboard presenta un análisis climático en tiempo real utilizando una API pública.
     </p>
 </section>
 
-<!-- GRÁFICOS -->
+
 <div class="graficos">
 
-    <div class="card">
-        <h3>Lluvia</h3>
-        <div class="chart-container">
+    <div class="bloque">
+        <div class="card">
             <canvas id="graficoLluvia"></canvas>
         </div>
-        <p class="descripcion">
-            Este gráfico muestra la cantidad de precipitación registrada en cada ciudad.
-        </p>
+        <div class="info-card">
+            <h4>Lluvia</h4>
+            <p>Cantidad de precipitación en cada ciudad.</p>
+        </div>
     </div>
 
-    <div class="card">
-        <h3>Temperatura</h3>
-        <div class="chart-container">
+    <div class="bloque">
+        <div class="card">
             <canvas id="graficoTemp"></canvas>
         </div>
-        <p class="descripcion">
-            Aquí se observa la variación de temperatura actual en las ciudades analizadas.
-        </p>
+        <div class="info-card">
+            <h4>Temperatura</h4>
+            <p>Comparación del nivel de calor entre ciudades.</p>
+        </div>
     </div>
 
 </div>
 
-<div class="graficos-abajo">
-    <div class="card">
-        <h3>Humedad</h3>
-        <div class="chart-container">
+<div class="graficos">
+
+   
+    <div class="bloque">
+        <div class="card">
             <canvas id="graficoHumedad"></canvas>
         </div>
-        
+        <div class="info-card">
+            <h4>Humedad</h4>
+            <p>Porcentaje de humedad relativa.</p>
+        </div>
     </div>
-</div>
 
+    <div class="bloque">
+        <div class="card">
+            <canvas id="graficoCalorPromedio"></canvas>
+        </div>
+        <div class="info-card">
+            <h4>Promedio de Calor</h4>
+            <p>Nivel promedio de temperatura.</p>
+        </div>
+    </div>
+
+</div>
 <!-- TABLA -->
 <div class="tabla-resumen">
 
@@ -87,13 +100,16 @@
 
 </div>
 
+<!-- BOTONES -->
 <div class="botones">
-    <a href="generar_pdf.php" target="_blank">Exportar PDF</a>
-    <a href="exportar_excel.php">Exportar Excel</a>
+    <a href="#" onclick="generarPDF(event)">Exportar PDF</a>
+    <a href="#" onclick="generarExcel(event)">Exportar Excel</a>
+    <a href="exportar_csv.php">Exportar CSV</a>
 </div>
 
 </div>
 
 <script src="assets/script.js"></script>
+
 </body>
 </html>

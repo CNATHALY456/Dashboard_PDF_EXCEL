@@ -4,20 +4,17 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #f5f7fb;
     color: #2c3e50;
 }
 
-
 .contenedor {
     width: 90%;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 30px auto;
 }
-
 
 header {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
@@ -27,22 +24,13 @@ header {
     text-align: center;
 }
 
-
-.encabezado-universidad {
-    background: white;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-
+.encabezado-universidad,
 .contexto {
     background: white;
     margin-top: 20px;
     padding: 20px;
     border-radius: 12px;
 }
-
 
 .graficos {
     display: grid;
@@ -51,78 +39,64 @@ header {
     margin-top: 25px;
 }
 
-
-.graficos-abajo {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-}
-
-
-.card {
-    background: white;
-    border-radius: 14px;
-    padding: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+.bloque {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 580px;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* TARJETAS */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 
-.graficos-abajo .card {
-    width: 380px;
-    height: 380px;
-}
-
-
-.card h3 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-
-.chart-container {
-    position: relative;
-    width: 100%;
-    height: 380px;
-}
-
-
-.graficos-abajo .chart-container {
-    width: 100%;
-    height: 100%;
-}
-
-/*  CANVAS  */
-.chart-container canvas {
+.graficos:first-of-type .card canvas {
     width: 100% !important;
-    height: 100% !important;
-    display: block;
+    height: 180px !important;
 }
 
 
+.graficos:last-of-type .card canvas {
+    width: 100% !important;
+    height: 280px !important;
+}
+
+/* TARJETAS DE INFO */
+.info-card {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.info-card h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    font-size: 11px;
+}
+
+/* TABLA */
 .tabla-resumen {
     margin-top: 30px;
     background: white;
     padding: 20px;
     border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-.tabla-resumen h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    border-radius: 10px;
-    overflow: hidden;
 }
 
 thead {
@@ -130,26 +104,16 @@ thead {
     color: white;
 }
 
-th {
-    padding: 12px;
-    font-size: 14px;
-}
-
-td {
+th, td {
     padding: 10px;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
+    text-align: center;
 }
 
 tbody tr:nth-child(even) {
-    background: #f8f9fc;
+    background: #f4f6fb;
 }
 
-tbody tr:hover {
-    background: #eef3ff;
-}
-
-
+/* BOTONES */
 .botones {
     text-align: center;
     margin-top: 25px;
@@ -162,23 +126,20 @@ tbody tr:hover {
     margin: 5px;
     border-radius: 8px;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 .botones a:hover {
     background: #1e3c72;
 }
 
-
-
+/* RESPONSIVE */
 @media (max-width: 768px) {
-
     .graficos {
         grid-template-columns: 1fr;
     }
 
-    .graficos-abajo .card {
-        width: 100%;
-        height: 0px;
+    .graficos:first-of-type .card canvas,
+    .graficos:last-of-type .card canvas {
+        height: 220px !important;
     }
 }
